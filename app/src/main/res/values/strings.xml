@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ADplayer</string>
+
+    <string name="empty_list_text">Список пуст</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

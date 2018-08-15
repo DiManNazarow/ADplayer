@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="EmptyListTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/empty_list_text</item>
+        <item name="android:textColor">@color/empty_list_text_color</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ItemTitleStyle">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">#212121</item>
+    </style>
+    <style name="ItemNameStyle">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
+
+</resources>
