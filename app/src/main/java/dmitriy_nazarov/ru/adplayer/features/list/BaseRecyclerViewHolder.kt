@@ -2,11 +2,12 @@ package dmitriy_nazarov.ru.adplayer.features.list
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
 
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.
  */
-abstract class BaseRecyclerViewHolder<M : BaseRecyclerViewItem> : RecyclerView.ViewHolder {
+abstract class BaseRecyclerViewHolder<M : BaseModel> : RecyclerView.ViewHolder {
 
     protected var model: M? = null
 

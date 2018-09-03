@@ -1,6 +1,6 @@
 package dmitriy_nazarov.ru.adplayer.features.list
 
-import android.app.Fragment
+import android.arch.lifecycle.ViewModel
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -9,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_recycler.*
 import dmitriy_nazarov.ru.adplayer.R
+import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
+import dmitriy_nazarov.ru.adplayer.features.livedata.BaseViewModelFragment
 
 
-abstract class RecyclerFragment<M : BaseRecyclerViewItem, VH : BaseRecyclerViewHolder<M>, A : BaseRecyclerAdapter<M, VH>> : Fragment() {
+abstract class ViewModelRecyclerFragment<Model : BaseModel, ViewHolder : BaseRecyclerViewHolder<Model>, Adapter : BaseRecyclerAdapter<Model, ViewHolder>, VM : ViewModel> : BaseViewModelFragment<VM>() {
 
-    private var adapter: A? = null
+    private var adapter: Adapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_recycler, container, false)
@@ -21,7 +23,6 @@ abstract class RecyclerFragment<M : BaseRecyclerViewItem, VH : BaseRecyclerViewH
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
-        recycler_view.setHasFixedSize(true)
         recycler_view.layoutManager = getRecyclerLayoutManager()
         adapter = instanceRecyclerAdapter()
         recycler_view.adapter = adapter
@@ -30,21 +31,21 @@ abstract class RecyclerFragment<M : BaseRecyclerViewItem, VH : BaseRecyclerViewH
 
     open fun getRecyclerLayoutManager() : (RecyclerView.LayoutManager) = LinearLayoutManager(activity)
 
-    abstract fun instanceRecyclerAdapter() : (A?)
+    abstract fun instanceRecyclerAdapter() : (Adapter?)
 
-    fun addItem(item: M){
+    fun addItem(item: Model){
         adapter?.addItem(item)
         adapter?.notifyDataSetChanged()
         processShowEmptyListText()
     }
 
-    fun addItems(items: MutableList<M>, clearList: Boolean){
+    fun addItems(items: MutableList<Model>, clearList: Boolean){
         adapter?.addItems(items, clearList)
         adapter?.notifyDataSetChanged()
         processShowEmptyListText()
     }
 
-    fun getAdapter() : (A?) = adapter
+    fun getAdapter() : (Adapter?) = adapter
 
     fun processShowEmptyListText(){
         if (adapter?.itemCount!! > 0){

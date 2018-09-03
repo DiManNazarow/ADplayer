@@ -1,38 +1,53 @@
 package dmitriy_nazarov.ru.adplayer.features.list
 
 import android.support.v7.widget.RecyclerView
+import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
 
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.
  */
-abstract class BaseRecyclerAdapter<M : BaseRecyclerViewItem, VH : BaseRecyclerViewHolder<M>> : RecyclerView.Adapter<VH> {
+abstract class BaseRecyclerAdapter<M : BaseModel, VH : BaseRecyclerViewHolder<M>> : RecyclerView.Adapter<VH> {
 
-    private var items: MutableList<M> = mutableListOf()
+    private var items: MutableList<M>? = mutableListOf()
 
-    constructor(items: MutableList<M>) : super() {
+    constructor(items: MutableList<M>?) : super() {
         this.items = items;
     }
 
-    override fun getItemCount(): Int = items.size
-
-    override fun onBindViewHolder(holder: VH, position: Int) {
-        holder.fill(items.get(position))
-    }
-
-    open fun addItem(item: M){
-        items.add(item)
-    }
-
-    open fun addItems(items: MutableList<M>, clearList: Boolean){
-        when (clearList) {
-            true -> {
-                items.clear()
-                items.addAll(items)
-            }
-            false -> items.addAll(items)
+    override fun getItemCount(): Int {
+        if (items == null || items!!.isEmpty()){
+            return 0
+        } else {
+            return items!!.size
         }
     }
 
-    fun getItems() : (MutableList<M>) = items
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        holder.fill(items!!.get(position))
+    }
+
+    open fun addItem(item: M){
+        initList()
+        items!!.add(item)
+    }
+
+    open fun addItems(items: MutableList<M>, clearList: Boolean){
+        initList()
+        when (clearList) {
+            true -> {
+                this.items!!.clear()
+                this.items!!.addAll(items)
+            }
+            false -> this.items!!.addAll(items)
+        }
+    }
+
+    fun getItems(): (MutableList<M>?) = items
+
+    private fun initList(){
+        if (items == null){
+            items = mutableListOf()
+        }
+    }
 
 }
