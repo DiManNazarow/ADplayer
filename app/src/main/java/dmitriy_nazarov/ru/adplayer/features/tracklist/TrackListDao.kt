@@ -6,17 +6,24 @@ import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
 import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
+import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
 
 @Dao
 interface TrackListDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertTrack(track: Track)
+    fun insertTrack(track: TrackEntity)
 
-    @Query("SELECT * FROM Track WHERE Track.id = :id")
+    @Query("SELECT * FROM TrackEntity WHERE TrackEntity.id = :id")
     fun getTrack(id: Long): Track
 
-    @Query("SELECT * FROM Track")
+    @Query("SELECT * FROM TrackEntity")
     fun getAllTracks(): LiveData<List<Track>>
+
+    @Query("SELECT * FROM TrackEntity")
+    fun getAllTracksRaw(): List<Track>
+
+    @Query("SELECT COUNT(*) FROM TrackEntity")
+    fun getCount(): Int;
 
 }

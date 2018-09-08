@@ -6,21 +6,21 @@ import dmitriy_nazarov.ru.adplayer.ADPlayerApp
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
 import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
 
-class TrackListRepository {
+object TrackListRepository {
 
-    companion object {
-
-        private var instance: TrackListRepository? = null
-
-        fun getInstance(): TrackListRepository? {
-            if (instance == null){
-                synchronized(TrackListRepository::class) {
-                    instance = TrackListRepository()
-                }
-            }
-            return instance
-        }
-    }
+//    companion object {
+//
+//        private var instance: TrackListRepository? = null
+//
+//        fun getInstance(): TrackListRepository? {
+//            if (instance == null){
+//                synchronized(TrackListRepository::class) {
+//                    instance = TrackListRepository()
+//                }
+//            }
+//            return instance
+//        }
+//    }
 
 
     fun getAllTracksTest(): MutableLiveData<List<Track>> {

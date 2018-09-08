@@ -16,8 +16,8 @@ class TrackListViewHolder(rootView: ViewGroup) : BaseRecyclerViewHolder<Track>(L
     private val nameTextView: TextView = itemView.findViewById(R.id.name_text_view)
 
     override fun fill() {
-        titleTextView.setText(model?.name)
-        nameTextView.setText(model?.artist)
+        titleTextView.setText(model?.trackTitle)
+        nameTextView.setText(model?.trackArtist)
     }
 
 

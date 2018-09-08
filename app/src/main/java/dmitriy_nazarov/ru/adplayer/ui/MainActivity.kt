@@ -6,6 +6,7 @@ import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
 import dmitriy_nazarov.ru.adplayer.features.tracklist.TrackListFragment
 import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
+import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        AppDatabase.getInstance(applicationContext)!!.trackListDao().insertTrack(Track("df", "fdf"))
-        AppDatabase.getInstance(applicationContext)!!.trackListDao().insertTrack(Track("dfdd", "fdddf"))
-        AppDatabase.getInstance(applicationContext)!!.trackListDao().insertTrack(Track("d111f", "fd111f"))
+        AppDatabase.getInstance(applicationContext)!!.trackListDao().insertTrack(TrackEntity(1L, "df", "fdf"))
+        AppDatabase.getInstance(applicationContext)!!.trackListDao().insertTrack(TrackEntity(2L, "dfdd", "fdddf"))
+        AppDatabase.getInstance(applicationContext)!!.trackListDao().insertTrack(TrackEntity(3L, "d111f", "fd111f"))
 
         supportFragmentManager.beginTransaction().add(R.id.main, TrackListFragment()).commit()
     }

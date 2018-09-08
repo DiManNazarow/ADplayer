@@ -14,7 +14,7 @@ class TrackListViewModel : ViewModel() {
     }
 
     fun getAllTrack(observer: Observer<List<Track>>) {
-        TrackListRepository.getInstance()!!.getAllTracks().observe(lifecycleOwner!!, observer)
+        TrackListRepository.getAllTracks().observe(lifecycleOwner!!, observer)
     }
 
 }

@@ -1,1 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea
 /build
+*.trace
+/captures
+/true/
+gitflow-installer.sh
+/gitflow
+*.li
+/calendar.properties
+online/src/main/res/values/com_crashlytics_export_strings.xml
+online/src/main/assets/crashlytics-build.properties
