@@ -40,4 +40,8 @@ open class TrackEntity(
         return result
     }
 
+    fun toArray(): Array<Any?> {
+        return arrayOf(id, trackTitle, trackArtist, trackAlbum, trackFilePath, albumArtPath, duration, albumId)
+    }
+
 }

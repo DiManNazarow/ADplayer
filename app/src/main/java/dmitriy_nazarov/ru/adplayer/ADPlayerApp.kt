@@ -11,6 +11,10 @@ class ADPlayerApp : Application() {
         @SuppressLint("StaticFieldLeak")
         var context: Context? = null
 
+        fun isTestMode(): Boolean {
+            return BuildConfig.testConfig
+        }
+
     }
 
     override fun onCreate() {

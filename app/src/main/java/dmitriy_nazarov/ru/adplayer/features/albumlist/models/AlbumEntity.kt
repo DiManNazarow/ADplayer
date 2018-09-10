@@ -27,4 +27,8 @@ open class AlbumEntity(
         return result
     }
 
+    fun toArray(): Array<Any?> {
+        return arrayOf(id, albumArtist, albumName,  albumArtPath)
+    }
+
 }
