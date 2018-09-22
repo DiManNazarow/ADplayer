@@ -6,4 +6,7 @@
 
     <color name="empty_list_text_color">#000000</color>
 
+    <color name="black">#000000</color>
+    <color name="light_grey">#797979</color>
+
 </resources>

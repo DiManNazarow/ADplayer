@@ -8,6 +8,10 @@ class TextUtils {
             return textFirst != null && teatSecond != null && textFirst.contentEquals(teatSecond)
         }
 
+        fun isTextEmpty(text: String?): Boolean {
+            return text == null || text.isEmpty()
+        }
+
     }
 
 }

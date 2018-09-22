@@ -8,13 +8,13 @@ import dmitriy_nazarov.ru.adplayer.features.tracklist.recyclerview.TrackListRecy
 import dmitriy_nazarov.ru.adplayer.features.tracklist.recyclerview.TrackListViewHolder
 import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
 
-class TrackListFragment : ViewModelRecyclerFragment<Track, TrackListViewHolder, TrackListRecyclerAdapter, TrackListViewModel>(), Observer<List<Track>> {
+class TrackListFragment : ViewModelRecyclerFragment<Track, TrackListRecyclerAdapter, TrackListViewModel>(), Observer<List<Track>> {
 
     override fun instanceViewModel(): Class<TrackListViewModel> {
         return TrackListViewModel::class.java
     }
 
-    override fun instanceRecyclerAdapter(): TrackListRecyclerAdapter? {
+    override fun instanceRecyclerAdapter(): TrackListRecyclerAdapter {
         return TrackListRecyclerAdapter(null)
     }
 

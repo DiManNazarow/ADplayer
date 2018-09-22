@@ -26,4 +26,7 @@ interface TrackListDao {
     @Query("SELECT COUNT(*) FROM TrackEntity")
     fun getCount(): Int;
 
+    @Query("DELETE FROM TrackEntity")
+    fun deleteAll();
+
 }

@@ -22,4 +22,7 @@ interface AlbumListDao {
     @Query("SELECT COUNT(*) FROM AlbumEntity")
     fun getCount(): Int
 
+    @Query("DELETE FROM AlbumEntity")
+    fun deleteAll()
+
 }

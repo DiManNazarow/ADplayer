@@ -6,13 +6,7 @@ import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.
  */
-abstract class BaseRecyclerAdapter<M : BaseModel, VH : BaseRecyclerViewHolder<M>> : RecyclerView.Adapter<VH> {
-
-    private var items: MutableList<M>? = mutableListOf()
-
-    constructor(items: MutableList<M>?) : super() {
-        this.items = items;
-    }
+abstract class BaseRecyclerAdapter<M : BaseModel, VH : BaseRecyclerViewHolder<M>>(private var items: MutableList<M>?) : RecyclerView.Adapter<VH>() {
 
     override fun getItemCount(): Int {
         if (items == null || items!!.isEmpty()){

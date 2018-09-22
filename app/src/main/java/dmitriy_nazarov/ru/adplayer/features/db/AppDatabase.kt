@@ -11,7 +11,7 @@ import dmitriy_nazarov.ru.adplayer.features.tracklist.TrackListDao
 import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
 
 @Database(entities = arrayOf(TrackEntity::class, AlbumEntity::class), version = 2)
-abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase : RoomDatabase(){
 
     abstract fun trackListDao(): TrackListDao
 
@@ -35,6 +35,7 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         fun destroyInstance() {
+            instance!!.close()
             instance = null
         }
 

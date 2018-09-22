@@ -13,9 +13,9 @@ import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
 import dmitriy_nazarov.ru.adplayer.features.livedata.BaseViewModelFragment
 
 
-abstract class ViewModelRecyclerFragment<Model : BaseModel, ViewHolder : BaseRecyclerViewHolder<Model>, Adapter : BaseRecyclerAdapter<Model, ViewHolder>, VM : ViewModel> : BaseViewModelFragment<VM>() {
+abstract class ViewModelRecyclerFragment<Model : BaseModel, Adapter : BaseRecyclerAdapter<Model, out BaseRecyclerViewHolder<Model>>, VM : ViewModel> : BaseViewModelFragment<VM>() {
 
-    private var adapter: Adapter? = null
+    private lateinit var adapter: Adapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_recycler, container, false)
@@ -31,24 +31,24 @@ abstract class ViewModelRecyclerFragment<Model : BaseModel, ViewHolder : BaseRec
 
     open fun getRecyclerLayoutManager() : (RecyclerView.LayoutManager) = LinearLayoutManager(activity)
 
-    abstract fun instanceRecyclerAdapter() : (Adapter?)
+    abstract fun instanceRecyclerAdapter() : (Adapter)
 
     fun addItem(item: Model){
-        adapter?.addItem(item)
-        adapter?.notifyDataSetChanged()
+        adapter.addItem(item)
+        adapter.notifyDataSetChanged()
         processShowEmptyListText()
     }
 
     fun addItems(items: MutableList<Model>, clearList: Boolean){
-        adapter?.addItems(items, clearList)
-        adapter?.notifyDataSetChanged()
+        adapter.addItems(items, clearList)
+        adapter.notifyDataSetChanged()
         processShowEmptyListText()
     }
 
     fun getAdapter() : (Adapter?) = adapter
 
-    fun processShowEmptyListText(){
-        if (adapter?.itemCount!! > 0){
+    private fun processShowEmptyListText(){
+        if (adapter.itemCount > 0){
             empty_list_text_view.visibility =  View.GONE
         } else {
             empty_list_text_view.visibility = View.VISIBLE

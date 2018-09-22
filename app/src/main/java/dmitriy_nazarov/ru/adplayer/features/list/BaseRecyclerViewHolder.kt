@@ -19,7 +19,7 @@ abstract class BaseRecyclerViewHolder<M : BaseModel> : RecyclerView.ViewHolder {
         this.model = model
     }
 
-    public fun fill(model: M?){
+    fun fill(model: M?){
         this.model = model
         fill()
     }

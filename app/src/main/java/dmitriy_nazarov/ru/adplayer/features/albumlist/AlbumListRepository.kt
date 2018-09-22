@@ -22,12 +22,16 @@ object AlbumListRepository {
         return AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().getAllAlbums()
     }
 
-    fun getAllAlbumsRaw(): List<Album> {
+    fun getAllAlbumsRaw(): List<Album>? {
         return AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().getAllAlbumsRaw()
     }
 
     fun getCount(): Int {
         return AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().getCount()
+    }
+
+    fun deleteAll() {
+        AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().deleteAll()
     }
 
 }
