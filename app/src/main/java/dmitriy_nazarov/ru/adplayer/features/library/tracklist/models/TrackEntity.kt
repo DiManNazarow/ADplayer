@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.tracklist.models
+package dmitriy_nazarov.ru.adplayer.features.library.tracklist.models
 
 import android.arch.persistence.room.*
 import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel

@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.library.albumlist.tracklist
+package dmitriy_nazarov.ru.adplayer.features.library.tracklist
 
 import dmitriy_nazarov.ru.adplayer.TestDataManager
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase

@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.tracklist.models
+package dmitriy_nazarov.ru.adplayer.features.library.tracklist.models
 
 open class Track(id: Long?,
                  trackTitle: String?,
