@@ -1,9 +1,9 @@
-package dmitriy_nazarov.ru.adplayer.features.albumlist
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import android.arch.lifecycle.LiveData
 import dmitriy_nazarov.ru.adplayer.ADPlayerApp
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.Album
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.AlbumEntity
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
 
 object AlbumListRepository {

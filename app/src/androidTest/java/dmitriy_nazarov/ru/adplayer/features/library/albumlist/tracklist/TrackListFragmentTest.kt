@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.tracklist
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist.tracklist
 
 import android.support.test.runner.AndroidJUnit4
 import android.support.test.rule.ActivityTestRule;
@@ -15,7 +15,7 @@ import android.view.View
 import dmitriy_nazarov.ru.adplayer.utils.DatabaseTestFillHelper
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.RecyclerViewInteraction
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.tracklist.models.Track
 import org.junit.Before
 import org.junit.Test
 

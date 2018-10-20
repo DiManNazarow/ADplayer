@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.albumlist
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import android.content.Intent
 import android.support.test.InstrumentationRegistry
@@ -11,7 +11,7 @@ import android.support.test.espresso.assertion.ViewAssertions.*
 import android.view.View
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.RecyclerViewInteraction
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.Album
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.ui.MainActivity
 import dmitriy_nazarov.ru.adplayer.utils.DatabaseTestFillHelper
 import org.junit.Before

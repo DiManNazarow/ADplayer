@@ -1,7 +1,7 @@
-package dmitriy_nazarov.ru.adplayer.features.albumlist
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import dmitriy_nazarov.ru.adplayer.TestDataManager
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.Album
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
 import org.junit.After
 import org.junit.Assert.*

@@ -21,7 +21,6 @@ class ADPlayerApp : Application() {
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
-        DatabaseTestFillHelper.fill(this)
     }
 
 }

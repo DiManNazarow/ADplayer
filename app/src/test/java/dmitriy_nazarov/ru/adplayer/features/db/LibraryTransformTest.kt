@@ -5,8 +5,7 @@ import android.content.Context
 import android.provider.MediaStore
 import dmitriy_nazarov.ru.adplayer.TestCursorHelper
 import dmitriy_nazarov.ru.adplayer.TestDataManager
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.Album
-import dmitriy_nazarov.ru.adplayer.features.db.LibraryTransform
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
 import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
 import org.junit.Before
 import org.junit.runner.RunWith
@@ -48,7 +47,7 @@ class LibraryTransformTest {
     @Test
     fun areAlbumsTransformingSuccessfully() {
         val cursor = MediaStoreAccessHelper.getAllAlbums(context)
-        val list: List<Album>? = LibraryTransform.transformDeviceAlbumLibIntoAppLib(cursor!!)
+        val list: List<AlbumEntity>? = LibraryTransform.transformDeviceAlbumLibIntoAppLib(cursor!!)
         assertNotNull(list)
         assertEquals(list!!.size, 3)
         assertTrue(list[0].equals(TestDataManager.albumsList[0]))

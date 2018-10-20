@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.albumlist.models
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist.models
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.albumlist
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import dmitriy_nazarov.ru.adplayer.R
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.Album
-import dmitriy_nazarov.ru.adplayer.features.albumlist.recyclerview.AlbumListRecyclerAdapter
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.recyclerview.AlbumListRecyclerAdapter
 import dmitriy_nazarov.ru.adplayer.features.list.GridSpaceItemDecoration
 import dmitriy_nazarov.ru.adplayer.features.list.ViewModelRecyclerFragment
 import kotlinx.android.synthetic.main.fragment_recycler.*

@@ -1,9 +1,9 @@
-package dmitriy_nazarov.ru.adplayer.features.albumlist
+package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.Album
-import dmitriy_nazarov.ru.adplayer.features.albumlist.models.AlbumEntity
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
+import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
 
 @Dao
 interface AlbumListDao {
