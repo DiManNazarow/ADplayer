@@ -1,6 +1,7 @@
 package dmitriy_nazarov.ru.adplayer.features.db
 
 import android.content.ContentUris
+import android.content.Context
 import android.database.Cursor
 import android.provider.MediaStore
 import android.support.annotation.VisibleForTesting
@@ -8,9 +9,9 @@ import dmitriy_nazarov.ru.adplayer.ADPlayerApp
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.AlbumListRepository
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
 import android.net.Uri
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.TrackEntity
 import dmitriy_nazarov.ru.adplayer.utils.TextUtils
 
 
@@ -22,9 +23,9 @@ class LibraryTransform {
     companion object {
 
         @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-        fun transformDeviceTrackLibIntoAppLib(): List<TrackEntity>? {
+        fun transformDeviceTrackLibIntoAppLib(context: Context): List<TrackEntity>? {
             var trackList: ArrayList<Track>? = null
-            val trackCursor: Cursor? = MediaStoreAccessHelper.getAllTracks(ADPlayerApp.context!!)
+            val trackCursor: Cursor? = MediaStoreAccessHelper.getAllTracks(context)
             if (trackCursor != null) {
                 trackCursor.moveToFirst()
                 try {
@@ -84,9 +85,9 @@ class LibraryTransform {
         }
 
         @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
-        fun transformDeviceAlbumLibIntoAppLib(): List<AlbumEntity>? {
+        fun transformDeviceAlbumLibIntoAppLib(context: Context, albumListRepository: AlbumListRepository): List<AlbumEntity>? {
             var albumList: ArrayList<Album>? = null
-            val albumCursor: Cursor? = MediaStoreAccessHelper.getAllAlbums(ADPlayerApp.context!!)
+            val albumCursor: Cursor? = MediaStoreAccessHelper.getAllAlbums(context)
             if (albumCursor != null) {
                 albumCursor.moveToFirst()
                 try {
@@ -106,7 +107,7 @@ class LibraryTransform {
 
                     } while (albumCursor.moveToNext())
 
-                    AlbumListRepository.insertAlbums(albumList)
+                    albumListRepository.insertAlbums(albumList)
 
                 } catch (exception: Exception) {
                     exception.printStackTrace()
@@ -127,8 +128,6 @@ class LibraryTransform {
                         val id: Long = albumCursor.getLong(albumCursor.getColumnIndexOrThrow(MediaStore.Audio.Albums._ID))
                         var albumName: String = albumCursor.getString(albumCursor.getColumnIndexOrThrow(MediaStore.Audio.Albums.ALBUM))
                         val albumArtist: String = albumCursor.getString(albumCursor.getColumnIndexOrThrow(MediaStore.Audio.Albums.ARTIST))
-
-                        //val uri = ContentUris.withAppendedId(sArtworkUri, id)
 
                         val albumArtPath: String? = albumCursor.getString(albumCursor.getColumnIndexOrThrow(MediaStore.Audio.Albums.ALBUM_ART))
 

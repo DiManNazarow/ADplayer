@@ -1,14 +1,17 @@
-package dmitriy_nazarov.ru.adplayer.features.tracklist
+package dmitriy_nazarov.ru.adplayer.features.library.tracklist
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.view.View
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.recyclerview.TrackListRecyclerAdapter
 import dmitriy_nazarov.ru.adplayer.features.list.ViewModelRecyclerFragment
-import dmitriy_nazarov.ru.adplayer.features.tracklist.recyclerview.TrackListRecyclerAdapter
-import dmitriy_nazarov.ru.adplayer.features.tracklist.recyclerview.TrackListViewHolder
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
+import javax.inject.Inject
 
 class TrackListFragment : ViewModelRecyclerFragment<Track, TrackListRecyclerAdapter, TrackListViewModel>(), Observer<List<Track>> {
+
+    @Inject
+    lateinit var trackListRepository: TrackListRepository
 
     override fun instanceViewModel(): Class<TrackListViewModel> {
         return TrackListViewModel::class.java
@@ -20,7 +23,7 @@ class TrackListFragment : ViewModelRecyclerFragment<Track, TrackListRecyclerAdap
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel!!.init(this)
+        viewModel!!.init(this, trackListRepository)
         viewModel!!.getAllTrack(this)
     }
 

@@ -6,7 +6,7 @@ import android.provider.MediaStore
 import dmitriy_nazarov.ru.adplayer.TestCursorHelper
 import dmitriy_nazarov.ru.adplayer.TestDataManager
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.TrackEntity
 import org.junit.Before
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner

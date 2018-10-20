@@ -1,7 +1,7 @@
 package dmitriy_nazarov.ru.adplayer.utils
 
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.TrackEntity
 
 class TestDataManager {
 

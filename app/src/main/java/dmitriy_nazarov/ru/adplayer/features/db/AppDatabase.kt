@@ -7,8 +7,8 @@ import android.content.Context
 import dmitriy_nazarov.ru.adplayer.ADPlayerApp
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.AlbumListDao
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
-import dmitriy_nazarov.ru.adplayer.features.tracklist.TrackListDao
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.TrackListDao
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.TrackEntity
 
 @Database(entities = arrayOf(TrackEntity::class, AlbumEntity::class), version = 2)
 abstract class AppDatabase : RoomDatabase(){

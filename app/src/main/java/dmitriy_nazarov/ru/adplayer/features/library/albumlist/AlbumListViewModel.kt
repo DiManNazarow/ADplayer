@@ -9,12 +9,15 @@ class AlbumListViewModel : ViewModel() {
 
     private lateinit var lifecycleOwner: LifecycleOwner
 
-    fun init(lifecycleOwner: LifecycleOwner) {
+    private lateinit var albumListRepository: AlbumListRepository
+
+    fun init(lifecycleOwner: LifecycleOwner, albumListRepository: AlbumListRepository) {
         this.lifecycleOwner = lifecycleOwner
+        this.albumListRepository = albumListRepository
     }
 
     fun getAllAlbums(observer: Observer<List<Album>>) {
-        AlbumListRepository.getAllAlbums().observe(lifecycleOwner, observer)
+        albumListRepository.getAllAlbums().observe(lifecycleOwner, observer)
     }
 
 }

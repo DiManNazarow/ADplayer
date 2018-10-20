@@ -1,26 +1,34 @@
 package dmitriy_nazarov.ru.adplayer
 
-import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Application
-import android.content.Context
-import dmitriy_nazarov.ru.adplayer.utils.DatabaseTestFillHelper
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
+import dmitriy_nazarov.ru.adplayer.dagger.DaggerAppComponent
+import javax.inject.Inject
 
-class ADPlayerApp : Application() {
+class ADPlayerApp : Application(), HasActivityInjector {
+
+    @Inject lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     companion object {
 
-        @SuppressLint("StaticFieldLeak")
-        var context: Context? = null
-
         fun isTestMode(): Boolean {
-            return BuildConfig.testConfig
+            return BuildConfig.fakeData
         }
-
     }
 
     override fun onCreate() {
         super.onCreate()
-        context = applicationContext
+
+        DaggerAppComponent.builder()
+                .application(this)
+                .build()
+                .inject(this)
+
     }
+
+    override fun activityInjector(): AndroidInjector<Activity> = activityDispatchingAndroidInjector
 
 }

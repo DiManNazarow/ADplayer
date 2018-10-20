@@ -1,19 +1,34 @@
 package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
+import android.arch.core.executor.testing.InstantTaskExecutorRule
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
+import com.ibm.icu.impl.Assert
 import dmitriy_nazarov.ru.adplayer.TestDataManager
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
 import org.junit.After
 import org.junit.Assert.*
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.shadows.ShadowApplication
+import org.junit.rules.TestRule
+
+
 
 @RunWith(RobolectricTestRunner::class)
 class AlbumListRepositoryTest {
 
+    @get:Rule
+    var rule: TestRule = InstantTaskExecutorRule()
+
+    private lateinit var albumListRepository: AlbumListRepository
+
     @Test
     fun testAlbumListRepository() {
+        albumListRepository = AlbumListRepository(AppDatabase.getInstance(ShadowApplication.getInstance().applicationContext)!!)
         getCount()
         insertAlbum()
         insertAlbums()
@@ -27,21 +42,21 @@ class AlbumListRepositoryTest {
     }
 
     private fun insertAlbum() {
-        AlbumListRepository.deleteAll()
-        AlbumListRepository.insertAlbum(TestDataManager.albumsList[0])
-        assertEquals(1, AlbumListRepository.getCount())
+        albumListRepository.deleteAll()
+        albumListRepository.insertAlbum(TestDataManager.albumsList[0])
+        assertEquals(1, albumListRepository.getCount())
     }
 
     private fun insertAlbums() {
-        AlbumListRepository.deleteAll()
-        AlbumListRepository.insertAlbums(TestDataManager.albumsList)
-        assertEquals(TestDataManager.albumsList.size, AlbumListRepository.getCount())
+        albumListRepository.deleteAll()
+        albumListRepository.insertAlbums(TestDataManager.albumsList)
+        assertEquals(TestDataManager.albumsList.size, albumListRepository.getCount())
     }
 
     private fun getAllAlbumsRaw() {
-        AlbumListRepository.deleteAll()
-        AlbumListRepository.insertAlbums(TestDataManager.albumsList)
-        val albums: List<Album>? = AlbumListRepository.getAllAlbumsRaw()
+        albumListRepository.deleteAll()
+        albumListRepository.insertAlbums(TestDataManager.albumsList)
+        val albums: List<Album>? = albumListRepository.getAllAlbumsRaw()
         assertNotNull(albums)
         assertEquals(albums!!.size, TestDataManager.albumsList.size)
         for (i in TestDataManager.albumsList.indices) {
@@ -50,12 +65,12 @@ class AlbumListRepositoryTest {
     }
 
     private fun getCount() {
-        assertNotEquals(-1, AlbumListRepository.getCount())
+        assertNotEquals(-1, albumListRepository.getCount())
     }
 
     private fun deleteAll() {
-        AlbumListRepository.deleteAll()
-        assertEquals(0, AlbumListRepository.getCount())
+        albumListRepository.deleteAll()
+        assertEquals(0, albumListRepository.getCount())
     }
 
 }

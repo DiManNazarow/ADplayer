@@ -2,9 +2,9 @@ package dmitriy_nazarov.ru.adplayer.features.livedata
 
 import android.arch.lifecycle.*
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import dmitriy_nazarov.ru.adplayer.ui.fragments.BaseFragment
 
-abstract class BaseViewModelFragment<VM : ViewModel> : Fragment(), LifecycleOwner, ViewModelStoreOwner {
+abstract class BaseViewModelFragment<VM : ViewModel> : BaseFragment(), LifecycleOwner, ViewModelStoreOwner {
 
     var viewModel: VM? = null
 

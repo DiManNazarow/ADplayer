@@ -1,7 +1,7 @@
 package dmitriy_nazarov.ru.adplayer.features.library.albumlist.models
 
 import android.arch.persistence.room.Relation
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.TrackEntity
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.TrackEntity
 
 class Album(id: Long?,
                  albumArtist: String?,

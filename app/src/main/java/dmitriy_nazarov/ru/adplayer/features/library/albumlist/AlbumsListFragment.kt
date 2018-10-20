@@ -11,12 +11,16 @@ import dmitriy_nazarov.ru.adplayer.features.library.albumlist.recyclerview.Album
 import dmitriy_nazarov.ru.adplayer.features.list.GridSpaceItemDecoration
 import dmitriy_nazarov.ru.adplayer.features.list.ViewModelRecyclerFragment
 import kotlinx.android.synthetic.main.fragment_recycler.*
+import javax.inject.Inject
 
 class AlbumsListFragment : ViewModelRecyclerFragment<Album, AlbumListRecyclerAdapter, AlbumListViewModel>(), Observer<List<Album>> {
 
+    @Inject
+    lateinit var albumListRepository: AlbumListRepository
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel!!.init(this)
+        viewModel!!.init(this, albumListRepository)
         viewModel!!.getAllAlbums(this)
         recycler_view.addItemDecoration(GridSpaceItemDecoration(activity!!.resources.getDimensionPixelSize(R.dimen.grid_list_spaces)))
     }

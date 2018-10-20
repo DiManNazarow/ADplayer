@@ -5,11 +5,12 @@ import dmitriy_nazarov.ru.adplayer.ADPlayerApp
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
 import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
+import javax.inject.Inject
 
-object AlbumListRepository {
+class AlbumListRepository @Inject constructor(val appDatabase: AppDatabase) {
 
     fun insertAlbum(album: AlbumEntity) {
-        AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().insertAlbum(album)
+        appDatabase.albumListDao().insertAlbum(album)
     }
 
     fun insertAlbums(albums: List<AlbumEntity>) {
@@ -19,19 +20,19 @@ object AlbumListRepository {
     }
 
     fun getAllAlbums(): LiveData<List<Album>> {
-        return AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().getAllAlbums()
+        return appDatabase.albumListDao().getAllAlbums()
     }
 
     fun getAllAlbumsRaw(): List<Album>? {
-        return AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().getAllAlbumsRaw()
+        return appDatabase.albumListDao().getAllAlbumsRaw()
     }
 
     fun getCount(): Int {
-        return AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().getCount()
+        return appDatabase.albumListDao().getCount()
     }
 
     fun deleteAll() {
-        AppDatabase.getInstance(ADPlayerApp.context)!!.albumListDao().deleteAll()
+        appDatabase.albumListDao().deleteAll()
     }
 
 }

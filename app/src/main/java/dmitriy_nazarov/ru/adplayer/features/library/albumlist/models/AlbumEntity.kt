@@ -16,7 +16,7 @@ open class AlbumEntity(
         if (this === other) return true
         if (other == null) return false
         val that = other as AlbumEntity
-        return id!!.equals(that.id) && TextUtils.isTextEquals(albumArtist, that.albumArtist) && TextUtils.isTextEquals(albumName, that.albumName) && TextUtils.isTextEquals(albumArtPath, that.albumArtPath)
+        return id!!.equals(that.id) && TextUtils.isTextEquals(albumArtist, that.albumArtist) && TextUtils.isTextEquals(albumName, that.albumName) && TextUtils.isTextEquals(getFullAlbumArtPath(), that.getFullAlbumArtPath())
     }
 
     override fun hashCode(): Int {
@@ -30,5 +30,14 @@ open class AlbumEntity(
     fun toArray(): Array<Any?> {
         return arrayOf(id, albumArtist, albumName,  albumArtPath)
     }
+
+    fun getFullAlbumArtPath(): String? {
+        if (albumArtPath != null && !albumArtPath!!.contains("file://")) {
+            return String.format("file://%s", albumArtPath)
+        } else {
+            return albumArtPath
+        }
+    }
+
 
 }

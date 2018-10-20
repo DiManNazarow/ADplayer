@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.AlbumsListFragment
-import dmitriy_nazarov.ru.adplayer.features.tracklist.TrackListFragment
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.TrackListFragment
 
 private const val FRAGMENT_COUNT = 2
 

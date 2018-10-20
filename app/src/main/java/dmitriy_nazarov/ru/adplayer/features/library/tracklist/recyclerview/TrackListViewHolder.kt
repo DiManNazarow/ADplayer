@@ -1,11 +1,11 @@
-package dmitriy_nazarov.ru.adplayer.features.tracklist.recyclerview
+package dmitriy_nazarov.ru.adplayer.features.library.tracklist.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import dmitriy_nazarov.ru.adplayer.R
+import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
 import dmitriy_nazarov.ru.adplayer.features.list.BaseRecyclerViewHolder
-import dmitriy_nazarov.ru.adplayer.features.tracklist.models.Track
 
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.
