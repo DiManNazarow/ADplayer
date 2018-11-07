@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.list
+package dmitriy_nazarov.ru.adplayer.features.core.list
 
 import android.arch.lifecycle.ViewModel
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_recycler.*
 import dmitriy_nazarov.ru.adplayer.R
-import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
-import dmitriy_nazarov.ru.adplayer.features.livedata.BaseViewModelFragment
+import dmitriy_nazarov.ru.adplayer.features.core.livedata.BaseModel
+import dmitriy_nazarov.ru.adplayer.features.core.livedata.BaseViewModelFragment
 
 
 abstract class ViewModelRecyclerFragment<Model : BaseModel, Adapter : BaseRecyclerAdapter<Model, out BaseRecyclerViewHolder<Model>>, VM : ViewModel> : BaseViewModelFragment<VM>() {

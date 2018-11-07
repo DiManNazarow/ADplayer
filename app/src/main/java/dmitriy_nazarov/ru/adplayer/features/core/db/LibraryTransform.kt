@@ -1,11 +1,10 @@
-package dmitriy_nazarov.ru.adplayer.features.db
+package dmitriy_nazarov.ru.adplayer.features.core.db
 
 import android.content.ContentUris
 import android.content.Context
 import android.database.Cursor
 import android.provider.MediaStore
 import android.support.annotation.VisibleForTesting
-import dmitriy_nazarov.ru.adplayer.ADPlayerApp
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.AlbumListRepository
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity

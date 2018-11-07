@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
-import dmitriy_nazarov.ru.adplayer.features.list.BaseRecyclerViewHolder
+import dmitriy_nazarov.ru.adplayer.features.core.list.BaseRecyclerViewHolder
 
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.

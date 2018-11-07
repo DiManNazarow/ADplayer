@@ -7,6 +7,8 @@
     <string name="albums">АЛЬБОМЫ</string>
     <string name="tracks">ТРЕКИ</string>
 
+    <string name="prepare_library">Подготовка библиотеки</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

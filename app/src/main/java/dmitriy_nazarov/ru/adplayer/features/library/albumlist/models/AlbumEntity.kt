@@ -2,7 +2,7 @@ package dmitriy_nazarov.ru.adplayer.features.library.albumlist.models
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
-import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
+import dmitriy_nazarov.ru.adplayer.features.core.livedata.BaseModel
 import dmitriy_nazarov.ru.adplayer.utils.TextUtils
 
 @Entity(tableName = "AlbumEntity")

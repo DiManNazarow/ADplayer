@@ -17,7 +17,7 @@ import dmitriy_nazarov.ru.adplayer.utils.DatabaseTestFillHelper
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.RecyclerViewInteraction
 import dmitriy_nazarov.ru.adplayer.TestUtils
-import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
+import dmitriy_nazarov.ru.adplayer.features.core.db.AppDatabase
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.TrackListRepository
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
 import dmitriy_nazarov.ru.adplayer.utils.TestDataManager

@@ -1,10 +1,9 @@
 package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import android.arch.lifecycle.LiveData
-import dmitriy_nazarov.ru.adplayer.ADPlayerApp
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.AlbumEntity
-import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
+import dmitriy_nazarov.ru.adplayer.features.core.db.AppDatabase
 import javax.inject.Inject
 
 class AlbumListRepository @Inject constructor(val appDatabase: AppDatabase) {

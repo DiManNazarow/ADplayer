@@ -1,7 +1,7 @@
-package dmitriy_nazarov.ru.adplayer.features.list
+package dmitriy_nazarov.ru.adplayer.features.core.list
 
 import android.support.v7.widget.RecyclerView
-import dmitriy_nazarov.ru.adplayer.features.livedata.BaseModel
+import dmitriy_nazarov.ru.adplayer.features.core.livedata.BaseModel
 
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.

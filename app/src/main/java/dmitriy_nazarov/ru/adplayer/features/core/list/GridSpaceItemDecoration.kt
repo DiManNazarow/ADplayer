@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.list
+package dmitriy_nazarov.ru.adplayer.features.core.list
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

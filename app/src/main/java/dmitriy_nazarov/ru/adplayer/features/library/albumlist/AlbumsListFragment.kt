@@ -8,8 +8,8 @@ import android.view.View
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.recyclerview.AlbumListRecyclerAdapter
-import dmitriy_nazarov.ru.adplayer.features.list.GridSpaceItemDecoration
-import dmitriy_nazarov.ru.adplayer.features.list.ViewModelRecyclerFragment
+import dmitriy_nazarov.ru.adplayer.features.core.list.GridSpaceItemDecoration
+import dmitriy_nazarov.ru.adplayer.features.core.list.ViewModelRecyclerFragment
 import kotlinx.android.synthetic.main.fragment_recycler.*
 import javax.inject.Inject
 

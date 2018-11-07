@@ -1,7 +1,7 @@
 package dmitriy_nazarov.ru.adplayer.features.library.tracklist
 
 import android.arch.lifecycle.LiveData
-import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
+import dmitriy_nazarov.ru.adplayer.features.core.db.AppDatabase
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.TrackEntity
 import javax.inject.Inject

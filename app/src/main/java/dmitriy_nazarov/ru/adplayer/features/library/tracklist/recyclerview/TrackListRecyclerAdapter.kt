@@ -2,7 +2,7 @@ package dmitriy_nazarov.ru.adplayer.features.library.tracklist.recyclerview
 
 import android.view.ViewGroup
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
-import dmitriy_nazarov.ru.adplayer.features.list.BaseRecyclerAdapter
+import dmitriy_nazarov.ru.adplayer.features.core.list.BaseRecyclerAdapter
 
 /**
  * Created by Dmitry Nazarov on 16-Aug-18.

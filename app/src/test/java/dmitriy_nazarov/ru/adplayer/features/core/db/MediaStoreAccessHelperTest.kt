@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.db
+package dmitriy_nazarov.ru.adplayer.features.core.db
 
 import android.content.ContentResolver
 import android.content.Context

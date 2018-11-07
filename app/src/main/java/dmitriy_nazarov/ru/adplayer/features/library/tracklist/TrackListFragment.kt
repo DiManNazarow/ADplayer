@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.models.Track
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.recyclerview.TrackListRecyclerAdapter
-import dmitriy_nazarov.ru.adplayer.features.list.ViewModelRecyclerFragment
+import dmitriy_nazarov.ru.adplayer.features.core.list.ViewModelRecyclerFragment
 import javax.inject.Inject
 
 class TrackListFragment : ViewModelRecyclerFragment<Track, TrackListRecyclerAdapter, TrackListViewModel>(), Observer<List<Track>> {

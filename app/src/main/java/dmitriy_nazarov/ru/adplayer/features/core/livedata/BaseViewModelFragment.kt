@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.features.livedata
+package dmitriy_nazarov.ru.adplayer.features.core.livedata
 
 import android.arch.lifecycle.*
 import android.os.Bundle

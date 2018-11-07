@@ -1,12 +1,9 @@
 package dmitriy_nazarov.ru.adplayer.features.library.albumlist
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import com.ibm.icu.impl.Assert
 import dmitriy_nazarov.ru.adplayer.TestDataManager
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
-import dmitriy_nazarov.ru.adplayer.features.db.AppDatabase
+import dmitriy_nazarov.ru.adplayer.features.core.db.AppDatabase
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Rule

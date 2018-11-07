@@ -7,7 +7,7 @@ import android.widget.TextView
 import com.squareup.picasso.Picasso
 import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.models.Album
-import dmitriy_nazarov.ru.adplayer.features.list.BaseRecyclerViewHolder
+import dmitriy_nazarov.ru.adplayer.features.core.list.BaseRecyclerViewHolder
 import dmitriy_nazarov.ru.adplayer.utils.TextUtils
 
 class AlbumListViewHolder(rootView: ViewGroup) : BaseRecyclerViewHolder<Album>(LayoutInflater.from(rootView.context).inflate(R.layout.layout_album_list_view_holder, rootView, false)) {
