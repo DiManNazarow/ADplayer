@@ -23,12 +23,20 @@ class TrackListFragment : ViewModelRecyclerFragment<Track, TrackListRecyclerAdap
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel!!.init(this, trackListRepository)
-        viewModel!!.getAllTrack(this)
+        viewModel?.init(this, trackListRepository)
+        viewModel?.getAllTrack(this)
     }
 
     override fun onChanged(tracks: List<Track>?) {
         addItems(tracks as ArrayList, false)
+    }
+
+    override fun getFragmentTag(): String = TAG
+
+    companion object {
+
+        const val TAG = "TrackListFragment"
+
     }
 
 }

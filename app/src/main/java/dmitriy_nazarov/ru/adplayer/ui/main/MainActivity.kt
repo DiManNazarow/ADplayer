@@ -1,9 +1,8 @@
-package dmitriy_nazarov.ru.adplayer.ui.activities.main
+package dmitriy_nazarov.ru.adplayer.ui.main
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import dmitriy_nazarov.ru.adplayer.R
-import dmitriy_nazarov.ru.adplayer.ui.activities.base.BaseActivity
+import dmitriy_nazarov.ru.adplayer.features.core.ui.activities.BaseActivity
 
 class MainActivity : BaseActivity() {
 

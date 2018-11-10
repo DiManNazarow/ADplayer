@@ -20,8 +20,8 @@ class AlbumsListFragment : ViewModelRecyclerFragment<Album, AlbumListRecyclerAda
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel!!.init(this, albumListRepository)
-        viewModel!!.getAllAlbums(this)
+        viewModel?.init(this, albumListRepository)
+        viewModel?.getAllAlbums(this)
         recycler_view.addItemDecoration(GridSpaceItemDecoration(activity!!.resources.getDimensionPixelSize(R.dimen.grid_list_spaces)))
     }
 
@@ -38,4 +38,13 @@ class AlbumsListFragment : ViewModelRecyclerFragment<Album, AlbumListRecyclerAda
     override fun onChanged(albums: List<Album>?) {
         addItems(albums as ArrayList, false)
     }
+
+    override fun getFragmentTag(): String = TAG
+
+    companion object {
+
+        const val TAG = "AlbumListFragment"
+
+    }
+
 }

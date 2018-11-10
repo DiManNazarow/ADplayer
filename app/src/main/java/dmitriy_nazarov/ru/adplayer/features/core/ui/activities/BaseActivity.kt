@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer.ui.activities.base
+package dmitriy_nazarov.ru.adplayer.features.core.ui.activities
 
 import dagger.android.support.DaggerAppCompatActivity
 import dagger.android.AndroidInjection

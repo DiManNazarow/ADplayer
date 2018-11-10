@@ -1,6 +1,7 @@
-package dmitriy_nazarov.ru.adplayer.ui.fragments
+package dmitriy_nazarov.ru.adplayer.features.core.ui.fragments
 
 import android.content.Context
+import android.os.Bundle
 import android.support.v4.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -14,8 +15,10 @@ abstract class BaseFragment: Fragment()  {
         super.onAttach(context)
     }
 
-    protected fun getNavigationController(): NavController = Navigation.findNavController(activity!!, getNavigationControllerId())
+    fun getNavigationController(): NavController = Navigation.findNavController(activity!!, getNavigationControllerId())
 
     protected fun getNavigationControllerId(): Int = R.id.main_activity_navigation_graph
+
+    abstract fun getFragmentTag(): String
 
 }

@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dmitriy_nazarov.ru.adplayer.R
+import dmitriy_nazarov.ru.adplayer.features.core.ui.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_library.*
 
-class LibraryFragment : Fragment() {
+class LibraryFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -20,6 +21,14 @@ class LibraryFragment : Fragment() {
 
         library_view_pager.adapter = LibraryFragmentsAdapter(context, childFragmentManager)
         tabs.setupWithViewPager(library_view_pager)
+
+    }
+
+    override fun getFragmentTag(): String = TAG
+
+    companion object {
+
+        const val TAG = "LibraryFragment"
 
     }
 

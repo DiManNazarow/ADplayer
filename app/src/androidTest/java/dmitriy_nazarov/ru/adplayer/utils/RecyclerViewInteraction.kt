@@ -1,4 +1,4 @@
-package dmitriy_nazarov.ru.adplayer
+package dmitriy_nazarov.ru.adplayer.utils
 
 import android.support.test.espresso.NoMatchingViewException
 import android.view.View

@@ -8,8 +8,6 @@ import dmitriy_nazarov.ru.adplayer.R
 import dmitriy_nazarov.ru.adplayer.features.library.albumlist.AlbumsListFragment
 import dmitriy_nazarov.ru.adplayer.features.library.tracklist.TrackListFragment
 
-private const val FRAGMENT_COUNT = 2
-
 class LibraryFragmentsAdapter(var context: Context?, fragmentManager: FragmentManager?) : FragmentPagerAdapter(fragmentManager) {
 
     override fun getItem(position: Int): Fragment {
@@ -26,10 +24,16 @@ class LibraryFragmentsAdapter(var context: Context?, fragmentManager: FragmentMa
 
     override fun getPageTitle(position: Int): CharSequence? {
         return if (position == 0){
-            context!!.getString(R.string.tracks)
+            context?.getString(R.string.tracks)
         } else {
-            context!!.getString(R.string.albums)
+            context?.getString(R.string.albums)
         }
+    }
+
+    companion object {
+
+        const val FRAGMENT_COUNT = 2
+
     }
 
 }
